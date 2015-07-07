@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw1-lU-61R">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-Fh-man">
+                                        <rect key="frame" x="8" y="8" width="184" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tw7-qS-H52">
+                                        <rect key="frame" x="8" y="85" width="184" height="30"/>
+                                        <state key="normal" title="Add file">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUe-ew-ZGT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdR-Lx-QrN">
+                                        <rect key="frame" x="8" y="162" width="184" height="30"/>
+                                        <state key="normal" title="Clear files">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearFiles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rsy-mW-COM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qHd-Fh-man" firstAttribute="top" secondItem="Cw1-lU-61R" secondAttribute="topMargin" id="1qV-ew-e9U"/>
+                                    <constraint firstItem="tw7-qS-H52" firstAttribute="trailing" secondItem="PdR-Lx-QrN" secondAttribute="trailing" id="Cqh-dA-mLV"/>
+                                    <constraint firstItem="PdR-Lx-QrN" firstAttribute="leading" secondItem="tw7-qS-H52" secondAttribute="leading" id="LHR-Vf-XHy"/>
+                                    <constraint firstAttribute="height" constant="200" id="LHi-yz-lwV"/>
+                                    <constraint firstAttribute="centerY" secondItem="tw7-qS-H52" secondAttribute="centerY" id="Vvl-u2-jM3"/>
+                                    <constraint firstItem="tw7-qS-H52" firstAttribute="centerY" secondItem="Cw1-lU-61R" secondAttribute="centerY" id="ZvD-H5-UTt"/>
+                                    <constraint firstItem="PdR-Lx-QrN" firstAttribute="leading" secondItem="Cw1-lU-61R" secondAttribute="leadingMargin" id="dyc-16-RMD"/>
+                                    <constraint firstItem="PdR-Lx-QrN" firstAttribute="bottom" secondItem="Cw1-lU-61R" secondAttribute="bottomMargin" id="lVo-FU-DbI"/>
+                                    <constraint firstItem="qHd-Fh-man" firstAttribute="trailing" secondItem="Cw1-lU-61R" secondAttribute="trailingMargin" id="lhx-i7-aJS"/>
+                                    <constraint firstItem="tw7-qS-H52" firstAttribute="leading" secondItem="qHd-Fh-man" secondAttribute="leading" id="m7d-ul-hAs"/>
+                                    <constraint firstItem="tw7-qS-H52" firstAttribute="trailing" secondItem="qHd-Fh-man" secondAttribute="trailing" id="qxz-Ng-zHH"/>
+                                    <constraint firstAttribute="width" constant="200" id="x2K-tZ-ijV"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-qU-5UU">
+                                <rect key="frame" x="281.5" y="281.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ghN-qU-5UU" secondAttribute="centerY" id="kle-Cv-NVz"/>
+                            <constraint firstAttribute="centerX" secondItem="ghN-qU-5UU" secondAttribute="centerX" id="riD-9H-BUn"/>
+                            <constraint firstAttribute="centerX" secondItem="Cw1-lU-61R" secondAttribute="centerX" id="sFA-em-o2Q"/>
+                            <constraint firstAttribute="centerY" secondItem="Cw1-lU-61R" secondAttribute="centerY" id="tGO-LD-0Ex"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fileCount" destination="qHd-Fh-man" id="pqB-Wr-6qQ"/>
+                        <outlet property="indicator" destination="ghN-qU-5UU" id="rul-oU-d9t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
