@@ -37,6 +37,7 @@
         NSString *filename = [[NSUUID UUID] UUIDString];
         NSURL *fileURL = [[self documentsFolder] URLByAppendingPathComponent:filename];
         [[NSFileManager defaultManager] createFileAtPath:fileURL.path contents:nil attributes:nil];
+        [fileURL setResourceValue:@YES forKey:NSURLIsExcludedFromBackupKey error:nil];
         NSFileHandle *writer = [NSFileHandle fileHandleForWritingToURL:fileURL error:nil];
         
         for (int i = 0; i<512; i++) {
